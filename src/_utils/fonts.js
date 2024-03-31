@@ -1,6 +1,6 @@
-import { Roboto_Slab, Roboto_Mono } from "next/font/google";
+import { Roboto_Slab, Montserrat, Roboto_Mono } from "next/font/google";
 
-export const fontPrimary = Roboto_Slab({ 
+export const fontPrimary = Montserrat({ 
   subsets: ["latin"], 
   weight: ["300","400", "500", "600", "700"] 
 });

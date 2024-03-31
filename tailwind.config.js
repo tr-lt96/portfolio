@@ -14,11 +14,11 @@ module.exports = {
       },
     },
     colors: {
-      "p-blue": "#263749",
-      "p-charcoal": "#445A73",
-      "p-cinnabar": "#F46036",
+      "p-blue": "#092644",
+      "p-charcoal": "#426894",
+      "p-cinnabar": "#FFAA3B",
       "p-coolgray": "#9fa2b2",
-      "p-cornsilk": "#fff6de",
+      "p-cornsilk": "#FAF0CA",
     }
   },
   plugins: [],

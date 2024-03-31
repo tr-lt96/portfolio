@@ -1,28 +1,27 @@
-import Image from 'next/image'
 import LandingSection from './LandingSection';
 import { fontSecondary } from '@/_utils/fonts';
+import { motion } from "framer-motion"
 
 const titles = ["Data Analyst", "Data Scientist", "Software Engineer"]
 export default function Hero() {
   return (
-    <div className="m-auto h-screen w-full relative">
+    <div className="hero-bg m-auto h-screen w-full relative">
       <div className="flex justify-center h-full items-center">
-
-        <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-0 opacity-10'>
-          <Image src="/hero-img.png" alt="" width={300} height={300} />
-        </div>
-
+        {/* <Image src="/hero-bg.png" alt="" fill className={"z-0 opacity-10 w-screen invert"} style={{ objectFit: "cover" }} /> */}
         <LandingSection>
-          <div className='z-10 flex flex-col w-full items-center justify-center gap-y-4'>
-            <div className='w-40 h-40 relative'>
-              <Image src="/profile.jpg" alt="" fill style={{objectFit: 'cover'}} className='rounded-full border-2 border-p-charcoal'/>
+          <div className='z-10 flex flex-col w-full justify-center gap-y-4'>
+            {/* <div className='w-40 h-40 relative'>
+              <Image src="/profile.jpg" alt="" fill style={{ objectFit: 'cover' }} className='rounded-full border-2 border-p-charcoal' />
+            </div> */}
+            <div className={`typewriter-text text-3xl md:text-[48px] leading-tight text-p-cinnabar font-semibold text-nowrap max-w-fit`}>
+              {`Hi, I'm `}
+              <span className='text-p-cornsilk pr-4'>Luke Tran</span>
             </div>
-            <div className="text-3xl md:text-[48px] font-semibold leading-tight">Hi, I&apos;m Luke Tran</div>
-            <div className={`flex flex-row ${fontSecondary.className} text-p-cinnabar uppercase`}>
+            <motion.div className={`${fontSecondary.className} text-p-cinnabar uppercase flex flex-col md:flex-row opacity-0`} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.5, ease: "anticipate" }}>
               {titles.map((title) => (
-                <h3 key={`hero-${title}`} className="border-r-2 border-solid border-white last:border-0 px-2 md:px-4">{title}</h3>
+                <h3 key={`hero-${title}`} className="border-l-2 pl-2 py-1 md:border-l-0 md:border-r-2 last:border-r-0 md:first:pl-0 md:px-4 text-p-cinnabar border-p-charcoal">{title}</h3>
               ))}
-            </div>
+            </motion.div>
           </div>
         </LandingSection>
 
