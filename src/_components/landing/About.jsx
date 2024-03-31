@@ -4,7 +4,7 @@ const content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 
 export default function About() {
     return (
-        <div className="flex justify-center relative bg-p-gunmetal py-16">
+        <div className="flex justify-center relative bg-p-blue py-16">
             <LandingSection>
                 <div className="flex flex-col text-center">
                     <h1>About Me</h1>

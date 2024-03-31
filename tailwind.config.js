@@ -14,10 +14,10 @@ module.exports = {
       },
     },
     colors: {
-      "p-gunmetal": "#16262E",
-      "p-charcoal": "#2e4756",
-      "p-cinnabar": "#d65639",
-      "p-coolgray": "9fa2b2",
+      "p-blue": "#263749",
+      "p-charcoal": "#445A73",
+      "p-cinnabar": "#F46036",
+      "p-coolgray": "#9fa2b2",
       "p-cornsilk": "#fff6de",
     }
   },

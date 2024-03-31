@@ -1,18 +1,15 @@
 "use client";
 import Link from 'next/link';
 import Image from 'next/image'
+import { fontSecondary } from '@/_utils/fonts';
 
 export default function Header() {
     return (
         <>
             {/* header */}
-            <header className="flex justify-content-space align-items-center py-2">
-                <Link href="/" className='w-fit'>
-                    <div className='w-6 h-6'>
-                        <Image src="/logo.svg" width={160} height={160} alt='logo'/>
-                    </div>
-                </Link>
-            </header>
+            <div className="flex justify-end align-items-center py-2 px-8 w-full fixed z-50 backdrop-blur-md">
+                <button type="button" className={`${fontSecondary.className} rounded-lg bg-p-cinnabar py-2 px-4 uppercase text-base`}>Download CV</button>
+            </div>
         </>
     )
 }
