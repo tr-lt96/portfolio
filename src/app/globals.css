@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --background-primary: #232340;
+  --background-light: #ffffff;
+  --grain: url("./grain.png");
+  --p-blue: "#092644";
+  --p-charcoal: "#426894";
+  --p-cinnabar: "#FFAA3B";
+  --p-coolgray: "#9fa2b2";
+  --p-cornsilk: "#FAF0CA";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl md:text-4xl font-semibold leading-tight text-p-cornsilk;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl font-semibold leading-tight text-p-cornsilk;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl font-semibold leading-tight tracking-wide text-p-cornsilk;
+  }
+
+  h4 {
+    @apply text-lg font-medium leading-tight text-p-cornsilk;
+  }
+
+  h5 {
+    @apply text-base font-medium leading-tight text-p-cornsilk;
+  }
+
+  p {
+    @apply font-normal;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.typewriter-text {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  border-right-width: 16px;
+  animation:
+    typing 1.5s steps(20) 0.5s 1 normal both,
+    blinkTextCursor 500ms steps(20) infinite
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #B6D5F7;
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
+body {
+  background: var(--grain),
+    radial-gradient(circle farthest-corner at 0 0, #092644 30%, #2C497F 65%, #B6D5F7 80%, #c1f1ff 110%) no-repeat,
+    radial-gradient(closest-side at 60% 50%, #2C497F 20%, #092644 100%) no-repeat;
+  background-size: 140px, 100%, cover;
+  background-blend-mode: overlay;
+}
