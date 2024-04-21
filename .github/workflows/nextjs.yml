@@ -36,6 +36,10 @@ jobs:
         with:
           node-version: "20"
           cache: npm
+      - name: Setup Environment
+        run: |
+          cp ./config/prov.env ./.env
+          cp ./config/next.config.prod.mjs ./next.config.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
