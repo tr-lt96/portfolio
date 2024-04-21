@@ -1,7 +1,7 @@
 "use client";
 import About from "./landing/About";
 import Hero from "./landing/Hero";
-import Portfolio from "./landing/Portfolio";
+import Project from "./landing/Project";
 import Skill from "./landing/Skill"
 
 export default function Landing() {
@@ -10,7 +10,7 @@ export default function Landing() {
             <Hero />
             <About />
             <Skill />
-            <Portfolio />
+            <Project />
         </div>
     )
 }

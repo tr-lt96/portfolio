@@ -1,12 +1,11 @@
 "use client";
 import Link from 'next/link';
-import Image from 'next/image'
 import { fontSecondary } from '@/_utils/fonts';
 import { RESUME_FILE } from '@/_data/constants';
 
 const RESUME_TITLE = "LukeTran_Resume.pdf"
 export default function Header() {
-    const href = `${process.env.NEXT_PUBLIC_BASE_PATH}/${RESUME_FILE}`
+    const href = `/${RESUME_FILE}`
 
     return (
         <>

@@ -1,9 +1,10 @@
 "use client";
 
 import { ArrowLeft } from "@/_components/icon";
-import { PROJECT_FILE_PATH } from "@/_data/constants";
+import { PROJECT_FOLDER } from "@/_data/constants";
 import { fontSecondary } from "@/_utils/fonts";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export function PortfolioContainer({ portfolio }) {
@@ -14,11 +15,14 @@ export function PortfolioContainer({ portfolio }) {
     return null;
   }
 
-  const projectPath = `${process.env.NEXT_PUBLIC_BASE_PATH}/${PROJECT_FILE_PATH}/${portfolio.publicId}`
+  const projectPath = `${PROJECT_FOLDER}/${portfolio.publicId}`
+  const relativePath = `${process.env.NEXT_PUBLIC_BASE_PATH}/${projectPath}`
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-screen h-[250px] block bg-p-cinnabar bg-contain bg-center" style={{backgroundImage: `url("${projectPath}/img.png")`}}></div>
+      <div className="w-screen h-[250px] block border-0 relative">
+        <Image src={`${relativePath}/img.png`} alt="" fill style={{ objectFit: 'cover' }}/>
+      </div>
       <div className="max-w-[1000px] w-full px-8 md:px-12 mt-16 flex flex-col gap-8">
         <button type="button" onClick={goBack} className="flex flex-row items-center">
           <ArrowLeft className={"w-4 h-4 text-p-cornsilk fill-p-cornsilk mr-2"} />
@@ -34,7 +38,7 @@ export function PortfolioContainer({ portfolio }) {
           Download project
         </Link>
         <div>
-          <iframe type={"application/pdf"} src={`${projectPath}/file.pdf`} className={"w-full h-[900px]"}></iframe>
+          <iframe type={"application/pdf"} src={`${relativePath}/file.pdf`} className={"w-full h-[900px]"}></iframe>
         </div>
       </div>
     </div>

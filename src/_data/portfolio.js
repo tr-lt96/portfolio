@@ -1,4 +1,4 @@
-import { PROJECT_FILE_PATH } from "./constants"
+import { PROJECT_FOLDER } from "./constants"
 
 const PORTFOLIO = [
     {
