@@ -39,8 +39,8 @@ jobs:
       - name: Setup Environment
         run: |
           ls
-          cp ./config/prov.env ./.env
-          cp ./config/next.config.prod.mjs ./next.config.mjs
+          cp config/prov.env .env
+          cp config/next.config.prod.mjs next.config.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
