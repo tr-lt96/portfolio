@@ -14,7 +14,7 @@ export function PortfolioContainer({ portfolio }) {
     return null;
   }
 
-  const projectPath = `${PROJECT_FILE_PATH}/${portfolio.publicId}`
+  const projectPath = `${process.env.NEXT_PUBLIC_BASE_PATH}/${PROJECT_FILE_PATH}/${portfolio.publicId}`
 
   return (
     <div className="flex flex-col items-center w-full">

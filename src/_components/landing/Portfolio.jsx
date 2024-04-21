@@ -9,7 +9,7 @@ import PortfolioThumbnail from "@/_components/illustration/PortfolioThumbnail"
 import { PROJECT_FILE_PATH } from '@/_data/constants';
 
 export default function Portfolio() {
-    const projectPath = `${PROJECT_FILE_PATH}/`
+    const projectPath = `${process.env.NEXT_PUBLIC_BASE_PATH}/${PROJECT_FILE_PATH}/`
     return (
         <div className="flex justify-center relative py-16">
             <LandingSection>
