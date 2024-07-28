@@ -26,23 +26,23 @@
 
 @layer base {
   h1 {
-    @apply text-2xl md:text-4xl font-semibold leading-tight text-p-cornsilk;
+    @apply text-4xl lg:text-7xl leading-tight;
   }
 
   h2 {
-    @apply text-xl md:text-2xl font-semibold leading-tight text-p-cornsilk;
+    @apply text-2xl lg:text-5xl leading-tight;
   }
 
   h3 {
-    @apply text-lg md:text-xl font-semibold leading-tight tracking-wide text-p-cornsilk;
+    @apply text-xl lg:text-4xl leading-tight tracking-wide;
   }
 
   h4 {
-    @apply text-lg font-medium leading-tight text-p-cornsilk;
+    @apply text-base lg:text-xl leading-tight ;
   }
 
   h5 {
-    @apply text-base font-medium leading-tight text-p-cornsilk;
+    @apply text-sm lg:text-base leading-tight;
   }
 
   p {
@@ -61,7 +61,7 @@
   /* Ensures the content is not revealed until the animation */
   white-space: nowrap;
   /* Keeps the content on a single line */
-  border-right-width: 16px;
+  border-right-width: 8px;
   animation:
     typing 1.5s steps(20) 0.5s 1 normal both,
     blinkTextCursor 500ms steps(20) infinite
@@ -80,7 +80,7 @@
 
 @keyframes blinkTextCursor {
   from {
-    border-right-color: #B6D5F7;
+    border-right-color: #D2E3EB;
   }
 
   to {
@@ -89,9 +89,12 @@
 }
 
 body {
-  background: var(--grain),
-    radial-gradient(circle farthest-corner at 0 0, #092644 30%, #2C497F 65%, #B6D5F7 80%, #c1f1ff 110%) no-repeat,
-    radial-gradient(closest-side at 60% 50%, #2C497F 20%, #092644 100%) no-repeat;
-  background-size: 140px, 100%, cover;
-  background-blend-mode: overlay;
+  background: #51626A;
+}
+
+.section-template {
+  grid-template-columns: minmax(0, 1fr);
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 80px minmax(100px, 1fr) minmax(0,80px);
+  }
 }

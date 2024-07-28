@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowLeft } from "@/_components/icon";
 import { PROJECT_FOLDER } from "@/_data/constants";
 import { fontSecondary } from "@/_utils/fonts";
 import Link from "next/link";
@@ -25,7 +24,6 @@ export function PortfolioContainer({ portfolio }) {
       </div>
       <div className="max-w-[1000px] w-full px-8 md:px-12 mt-16 flex flex-col gap-8">
         <button type="button" onClick={goBack} className="flex flex-row items-center">
-          <ArrowLeft className={"w-4 h-4 text-p-cornsilk fill-p-cornsilk mr-2"} />
           Back
         </button>
         <h1 className={`${fontSecondary.className} uppercase`}>{portfolio.title}</h1>
