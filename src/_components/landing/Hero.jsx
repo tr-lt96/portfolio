@@ -2,26 +2,45 @@ import LandingSection from './LandingSection';
 import { fontSecondary } from '@/_utils/fonts';
 import { motion } from "framer-motion"
 
-const titles = ["Data Analyst", "Data Scientist", "Software Engineer"]
+const titles = ["data analyst", "data scientist", "business analyst"]
+
+const LineNumDecorator = () => {
+  return (
+    <div className="flex items-start gap-x-1 lg:gap-x-2 md:col-start-1">
+      <span className="w-2 bg-d-primary rounded-lg h-full"></span>
+      <span className={`${fontSecondary.className} font-light  lg:text-xl text-d-dark`}>{'[1]:'}</span>
+    </div>
+  )
+}
+const TitleSection = () => {
+  return (
+    <div className={`bg-d-dark ${fontSecondary.className} p-4 font-thin leading-normal text-base lg:text-[32px] w-full`}>
+      <span className={`text-d-background`}>{'t=['}</span>
+      {titles.map((title, index) => {
+        return (
+          <span key={`${title}-${index}`}>
+            <p className={`inline font-thin ${index > 0 && "pl-4"}`}>{`"${title}"`}</p>
+            {index < titles.length - 1 && <span className="text-d-background">{','}</span>}
+            {index < titles.length - 1 && <br />}
+          </span>)
+      })}
+      <span className={`text-d-background typewriter-text`}>{']'}</span>
+    </div>
+  )
+}
+
 export default function Hero() {
   return (
-    <div className="hero-bg m-auto h-screen w-full relative">
-      <div className="flex justify-center h-full items-center">
-        <LandingSection>
-          <div className='z-10 flex flex-col w-full justify-center gap-y-4'>
-            <div className={`typewriter-text text-3xl md:text-[48px] leading-tight text-p-cinnabar font-semibold text-nowrap max-w-fit`}>
-              {`Hi, I'm `}
-              <span className='text-p-cornsilk pr-4'>Luke Tran</span>
-            </div>
-            <motion.div className={`${fontSecondary.className} text-p-cinnabar uppercase flex flex-col md:flex-row opacity-0`} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.5, ease: "anticipate" }}>
-              {titles.map((title) => (
-                <h3 key={`hero-${title}`} className="border-l-2 pl-2 py-1 md:border-l-0 md:border-r-2 last:border-r-0 md:first:pl-0 md:px-4 text-p-cinnabar border-p-charcoal">{title}</h3>
-              ))}
-            </motion.div>
-          </div>
-        </LandingSection>
-
+    <div className="max-w-[1160px] w-full h-screen px-8 flex items-center">
+      <div className="grid section-template gap-y-8 w-full">
+        <div className="font-normal md:col-start-2">
+          <h1 className="inline">{"Hi, I'm"}</h1>
+          <h1 className="inline text-d-primary">{" Luke Tran"}</h1>
+        </div>
+        
+        <LineNumDecorator/>
+        <TitleSection />
       </div>
     </div>
-  );
+  )
 }
